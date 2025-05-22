@@ -28,7 +28,7 @@
       <p class="read-the-docs">
         Click on the Vite and React logos to learn more
       </p>
-        <textarea name="prompt" id="prompt" placeholder="write your content!!"></textarea>
+        <textarea name="prompt" id="prompt" placeholder=""></textarea>
         <button id="btn">Submit</button>
     </div>
     <script type="importmap">
@@ -47,7 +47,7 @@
             const genAI = new GoogleGenerativeAI(API_KEY);
             const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
 
-            const prompt = str;
+            const prompt = str+" dont include any comments";
 
             const result = await model.generateContent(prompt);
             var str = result.response.text();
